@@ -8,7 +8,7 @@
     "install": " cd ./client && npm ci && cd ../server && npm ci",
     "test:client": "cd ./client && npm test",
     "test:server": "cd ./server && npm test",
-    "e2e": "cd ./server && npm run start & cd ../client && npm run e2e",
+    "e2e": "cd ./client && npm run e2e",
     "start:backend": "cd ./server && npm run build && npm run start:prod",
     "lint": "cd ./server && npm run lint && cd ../client && npm run lint"
   },
