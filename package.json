@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Source code for the complete catfacts serverless application, built with:",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "install": " cd ./client && npm ci && cd ../server && npm ci",
     "test": "cd ./client && npm test && cd ../server && npm test",
