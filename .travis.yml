@@ -14,11 +14,14 @@ before_install:
   - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   - sudo dpkg -i google-chrome*.deb
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen scn 1600x1200x16"
+
+env:
+  - TEST_DIR=client E2E_TEST=true
+  - TEST_DIR=server E2E_TEST=false
 install:
-  - cd client
-  - npm ci
-  - cd server
-  - npm ci
+  - cd $TEST_DIR && npm ci
 test:
-  - cd client
-  - npm run test
+  - cd $TEST_DIR && npm run test
+e2e:
+  - cd client && npm run e2e
+
