@@ -20,7 +20,7 @@ cache: npm
 env:
   - TEST_DIR_CLIENT=./client TEST_DIR_SERVER=./server
 install:
-  - echo "$PWD ${TEST_DIR_CLIENT}"
+  - echo "hello $PWD ${TEST_DIR_CLIENT}"
   - cd ${TEST_DIR_CLIENT}
   - echo "${PWD}"
   - npm ci
