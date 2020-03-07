@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - 10
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+install:
+  - cd client
+  - npm ci
+  - cd server
+  - npm ci
+test:
+  - cd client
+  - npm run test
