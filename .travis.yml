@@ -18,11 +18,15 @@ before_install:
 env:
   - TEST_DIR_CLIENT=./client TEST_DIR_SERVER=./server
 install:
-  - cd $TEST_DIR_CLIENT && npm ci
-  - cd $TEST_DIR_SERVER && npm ci
-test:
-  - cd $TEST_DIR_CLIENT && npm run test
-  - cd $TEST_DIR_SERVER && npm run test
-e2e:
-  - cd $TEST_DIR_CLIENT && npm run e2e
+  - cd $TEST_DIR_CLIENT
+  - npm ci
+  - cd $TEST_DIR_SERVER
+  - npm ci
+script:
+  - cd $TEST_DIR_CLIENT
+  - npm run test
+  - cd $TEST_DIR_SERVER
+  - npm run test
+  - cd $TEST_DIR_CLIENT
+  - npm run e2e
 
