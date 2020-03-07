@@ -1,4 +1,6 @@
-dist: trusty
+dist: xenial
+services:
+  - xvfb
 language: node_js
 node_js:
   - 10
