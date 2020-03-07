@@ -1,5 +1,14 @@
-import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import {AppPage} from './app.po';
+import {browser, logging} from 'protractor';
+const fs = require('fs');
+
+// abstract writing screen shot to a file
+function writeScreenShot(data, filename) {
+  const stream = fs.createWriteStream(filename);
+
+  stream.write(new Buffer(data, 'base64'));
+  stream.end();
+}
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -10,7 +19,10 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('catfacts-client app is running!');
+    browser.takeScreenshot().then((png) => {
+      writeScreenShot(png, 'main.png');
+    });
+    expect(page.getTitleText()).toEqual('NextThink shop');
   });
 
   afterEach(async () => {
