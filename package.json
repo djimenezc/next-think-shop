@@ -1,0 +1,22 @@
+{
+  "name": "next-think-shop",
+  "version": "1.0.0",
+  "description": "Source code for the complete catfacts serverless application, built with:",
+  "main": "index.js",
+  "scripts": {
+    "install": " cd ./client && npm ci && cd ../server && npm ci",
+    "test": "cd ./client && npm test && cd ../server && npm test",
+    "e2e": "cd ./server && npm run start & cd ../client && npm run e2e"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djimenezc/next-think-shop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djimenezc/next-think-shop/issues"
+  },
+  "homepage": "https://github.com/djimenezc/next-think-shop#readme"
+}

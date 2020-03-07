@@ -6,7 +6,8 @@
     "start": "ng serve",
     "start:local": "ng serve --proxy-config proxy.local.js",
     "build": "ng build",
-    "test": "ng test",
+    "test": "ng test --watch=false",
+    "test:watch": "ng test --watch=true",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
