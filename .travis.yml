@@ -16,12 +16,13 @@ before_install:
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen scn 1600x1200x16"
 
 env:
-  - TEST_DIR=client E2E_TEST=true
-  - TEST_DIR=server E2E_TEST=false
+  - TEST_DIR_CLIENT=client TEST_DIR_SERVER=server
 install:
-  - cd $TEST_DIR && npm ci
+  - cd $TEST_DIR_CLIENT && npm ci
+  - cd $TEST_DIR_SERVER && npm ci
 test:
-  - cd $TEST_DIR && npm run test
+  - cd $TEST_DIR_CLIENT && npm run test
+  - cd $TEST_DIR_SERVER && npm run test
 e2e:
-  - cd client && npm run e2e
+  - cd $TEST_DIR_CLIENT && npm run e2e
 
