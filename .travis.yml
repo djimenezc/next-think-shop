@@ -20,7 +20,7 @@ cache: npm
 install:
   - npm i
 script:
-  - npm run test-client
-  - npm run test-server
+  - npm run test:client
+  - npm run test:server
 #  - npm run e2e
 

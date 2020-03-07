@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "install": " cd ./client && npm ci && cd ../server && npm ci",
-    "test": "cd ./client && npm test && cd ../server && npm test",
+    "test:client": "cd ./client && npm test",
+    "test:server": "cd ./server && npm test",
     "e2e": "cd ./server && npm run start & cd ../client && npm run e2e"
   },
   "repository": {
