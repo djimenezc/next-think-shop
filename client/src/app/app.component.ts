@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs';
-import { environment } from '../environments/environment';
+import {Component} from '@angular/core';
+import {HttpClient} from '@angular/common/http'
+import {Observable} from 'rxjs';
+import {environment} from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,7 @@ export class AppComponent {
   constructor(http: HttpClient) {
     this.fact$ = http.get(
       `${environment.apiUrl}/facts/random`,
-      { responseType: 'text' }
+      {responseType: 'text'}
     );
   }
 }
