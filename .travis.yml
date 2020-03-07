@@ -15,10 +15,14 @@ before_install:
   - sudo dpkg -i google-chrome*.deb
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen scn 1600x1200x16"
 
+cache: npm
+
 env:
   - TEST_DIR_CLIENT=./client TEST_DIR_SERVER=./server
 install:
+  - echo "$PWD"
   - cd $TEST_DIR_CLIENT
+  - echo "$PWD"
   - npm ci
   - cd $TEST_DIR_SERVER
   - npm ci
