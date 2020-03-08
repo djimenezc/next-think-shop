@@ -22,7 +22,7 @@ describe('workspace-project App', () => {
     browser.takeScreenshot().then((png) => {
       writeScreenShot(png, 'main.png');
     });
-    expect(page.getTitleText()).toEqual('NextThink shop');
+    expect(page.getTitleText()).toEqual('NextThink shop list');
   });
 
   afterEach(async () => {
