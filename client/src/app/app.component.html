@@ -5,39 +5,47 @@
   <h2>Available Items</h2>
   <div class="item-list">
 
-    <div *ngFor="let item of getItems(items); let num = index">
-      {{num}} -
-      <label class="capitalize">
-        <input type="checkbox"
-               name="item-{{item.name}}"
-               [checked]="item.selected"
-               [value]="item.value"
-               (change)="onCheckboxChange($event, null)">
-        <span *ngIf="!item.editing; else elseBlock">{{item.name}}</span>
-        <ng-template #elseBlock>
-          <input type="text" value="{{item.name}}"
-                 (change)="onNameChange($event)"
-                 name="input-text-{{item.value}}"
-          />
-        </ng-template>
+    <div class="row" *ngFor="let item of getItems(items); let num = index">
+      <span>
+        <label class="capitalize aligner label-checkbox">
+          <span class="row-text"
+                *ngIf="!item.editing; else elseBlock">{{item.name}}</span>
+          <ng-template #elseBlock>
+            <input type="text" value="{{item.name}}"
+                   (change)="onNameChange($event)"
+                   name="input-text-{{item.value}}"
+            />
+          </ng-template>
+          <input type="checkbox"
+                 name="item-{{item.name}}"
+                 class="regular-checkbox"
+                 [checked]="item.selected"
+                 [value]="item.value"
+                 (change)="onCheckboxChange($event, null)">
+        </label>
+      </span>
+      <span class="btn-row">
         <button class="btn"
                 value="{{item.value}}"
                 (click)="onEdit($event)"><i class="fa fa-edit"></i></button>
-      </label>
+      </span>
     </div>
   </div>
 
   <h2>Selected Items</h2>
   <div class="item-list">
-    <div *ngFor="let item of selectedItems; let num = index">
-      {{num}} - <label class="capitalize">{{item.name}}
+    <div class="row" *ngFor="let item of selectedItems; let num = index">
+      <label class="capitalize">{{item.name}}
+      </label>
+      <span class="btn-row">
+
       <button class="btn"
               value="{{item.value}}"
               (click)="onEdit($event)"><i class="fa fa-edit"></i></button>
       <button class="btn"
               value="{{item.value}}"
               (click)="onRemove($event)"><i class="fa fa-trash"></i></button>
-    </label>
+      </span>
     </div>
   </div>
 </article>

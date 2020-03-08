@@ -54,7 +54,7 @@ export class AppComponent {
   }
 
   onEdit(e) {
-    const value = e.target.parentElement.value;
+    const value = e.target.parentElement.value || e.target.value;
     console.log('onEdit', value);
     this.items[value].editing = !this.items[value].editing;
   }
