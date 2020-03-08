@@ -1,4 +1,4 @@
-# 🐱 catfacts
+#  Shopping list app
 
 Source code for the complete thinknext shopping list application, built with:
 
