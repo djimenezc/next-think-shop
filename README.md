@@ -17,3 +17,5 @@ Write a standalone web page that displays a shopping list and allows the user to
 ["Build your first serverless app with Angular, NestJS and Azure"](https://dev.to/azure/build-your-first-serverless-app-with-angular-nestjs-and-azure-108h)
 
 For CI I have used [Travis](https://travis-ci.org/djimenezc/next-think-shop/builds) 
+
+The application has been deployed in https://shoplistdjimenezc.z16.web.core.windows.net/

@@ -1,0 +1,17 @@
+{
+  "hosting": [
+    {
+      "app": {
+        "project": "client",
+        "target": "build",
+        "configuration": "production",
+        "path": "dist/client"
+      },
+      "azureHosting": {
+        "subscription": "38fa02e4-0d16-48e0-b2ec-a5ec68f336d1",
+        "resourceGroupName": "shoplist",
+        "account": "shoplistdjimenezc"
+      }
+    }
+  ]
+}
