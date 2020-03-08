@@ -11,7 +11,7 @@ import {convertObjectToArray, convertToMap, Item} from './app.helper';
 })
 export class AppComponent {
   items$: Observable<string>;
-  items: any[] = [];
+  items: Item[] = [];
   selectedItems: Item[] = [];
 
   constructor(http: HttpClient) {
